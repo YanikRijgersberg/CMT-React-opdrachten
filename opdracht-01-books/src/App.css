@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+.book{
+  color: black;
+  background-color: lightgray;
+  width: 300px;
+  height: auto;
+  
+}
+.imgbooks{
+  width: 200px;
+  height: auto;
+}
