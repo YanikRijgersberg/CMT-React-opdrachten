@@ -1,38 +1,8 @@
-// const Book = ({ title, beschrijving, img }) => {
-//     return ( 
-//     <section className="
-//     book">
-//     <img className="imgbooks" src={img} alt={title} />
-//     <h2>{title}</h2>
-//     <p>{beschrijving}</p>
-//     </section> 
-//     );
-// }
- 
-// export default Book;
+// 1
 import { useState } from "react";
 
 function BookList() {
-  const [books] = useState([
-    {
-      id: 1,
-      title: "harry snotter",
-      author: "j.k. rowling",
-      image: "./public/images/book-1.png",
-    },
-    {
-      id: 2,
-      title: "fantasia 6",
-      author: "geronimo stilton",
-      image: "./public/images/book-2.png",
-    },
-    {
-      id: 3,
-      title: "honger spellen",
-      author: "suzanne collins",
-      image: "./public/images/book-3.png",
-    },
-  ]);
+  const [books] = useState();
 
   return (
     <section className="booklist">
