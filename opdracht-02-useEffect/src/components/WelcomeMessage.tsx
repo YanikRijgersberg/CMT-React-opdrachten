@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-// Clock component verplaatst naar binnen
 const Clock = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
