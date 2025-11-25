@@ -1,12 +1,22 @@
-import './App.css'
+import { useState } from "react";
+import CreateMessage from "../src/componets/CreateMessage";
+import MessageList from "../src/componets/MessageList";
 
-function App() {
+const App = () => {
+  const [messages, setMessages] = useState([]);
 
   return (
-    <>
-      <h1>Opdracht 7 - Twitter</h1>
-    </>
-  )
-}
+    <div>
+      <h1>Chatroom</h1>
 
-export default App
+      <CreateMessage 
+        messages={messages} 
+        setMessages={setMessages} 
+      />
+
+      <MessageList messages={messages} />
+    </div>
+  );
+};
+
+export default App;
