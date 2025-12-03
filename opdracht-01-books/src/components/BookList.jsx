@@ -1,20 +1,49 @@
-
 import { useState } from "react";
+import BookData from "../book-data";
+import Book from "./Book";
+import BookCounter from "./BookCounter";
+const BookList = () => {
+  const [books, setBooks] = useState(BookData);
+  const [searchInput, setSearchInput] = useState("");
 
-function BookList() {
-  const [books] = useState();
+  const SearchHandler = (e) => {
+    let newSearch = e.target.value;
+    setSearchInput(newSearch);
+     const filteredBooks = BookData.filter((book) => 
+    
+book.title.toLowerCase().includes(newSearch.toLowerCase())
+  )
+setBooks(filteredBooks)
+  };
+
+ 
+
 
   return (
-    <section className="booklist">
-      {books.map((book) => (
-        <div key={book.id} className="book-card">
-          <img src={book.image} alt={book.title} />
-          <h3>{book.title}</h3>
-          <p>{book.author}</p>
-        </div>
-      ))}
-    </section>
+    <>
+      <div className="search">
+        <input
+          type="text"
+          placeholder="zoek hier uw boek"
+          name="search"
+          onChange={SearchHandler}
+          value={searchInput}
+        />
+      </div>
+      <section className="booklist">
+        <BookCounter aantal={books.length} />
+        {books.map((book) => (
+          <Book
+            img={book.image}
+            title={book.title}
+            author={book.author}
+            button={book.aantalKeerGelezen}
+            btn={book.Btn}
+          />
+        ))}
+      </section>
+    </>
   );
-}
+};
 
 export default BookList;

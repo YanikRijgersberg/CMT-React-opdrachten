@@ -1,9 +1,10 @@
-const navbar = (Link, Outlet) => {
+import { Link, Outlet } from "react-router-dom";
+const Navigation = () => {
   return (
     <>
-      <nav className="navbar">
+      <nav className="header">
         <ul>
-          <li>
+          <li> 
             <Link to="/">Home</Link>
           </li>
           <li>
@@ -14,9 +15,8 @@ const navbar = (Link, Outlet) => {
           </li>
         </ul>
       </nav>
-        <Outlet />
+      <Outlet />
     </>
   );
 };
-
-export default navbar;
+export default Navigation;

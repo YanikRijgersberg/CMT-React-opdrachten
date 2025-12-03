@@ -1,10 +1,7 @@
-const Nopage = () => {
-    return ( <>
-    <h1>no page found</h1>
-    
-    
-    
-    </> );
+const NoPage = () => {
+        
+    return (<h1>404, page not found.</h1>  
+        );
 }
  
-export default Nopage;
+export default NoPage;

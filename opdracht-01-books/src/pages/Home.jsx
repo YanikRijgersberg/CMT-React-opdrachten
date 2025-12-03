@@ -1,20 +1,12 @@
-import Header from "../components/Header";
+import BookList from "../components/BookList";
 import Layout from "../components/Layout";
-import BookList from "../components/BookList";  
-
-
 
 const Home = () => {
-    return ( 
-    <>
-     <h1>black</h1>
-    <Header />
-      <Layout>
-        <BookList/>
-      </Layout>
-    
-    </>
-     );
-}
- 
+  return (
+    <Layout>
+      <BookList />
+    </Layout>
+  );
+};
+
 export default Home;

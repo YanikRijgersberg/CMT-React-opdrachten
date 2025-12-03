@@ -6,11 +6,13 @@ const App = () => {
   const [todos, setTodos] = useState([]);
 
   return (
-    <div>
-      <h1>To-Do Lijst</h1>
+    <div className="min-h-screen flex flex-col items-center pt-20 bg-gradient-to-r from-blue-600 to-blue-900">
+      <h1 className="text-white text-4xl font-bold mb-10">
+        &lt;Jouw naam&gt; To Do List
+      </h1>
 
       <TodoForm todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };

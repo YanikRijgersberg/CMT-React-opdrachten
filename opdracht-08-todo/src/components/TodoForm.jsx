@@ -3,39 +3,29 @@ import { useState } from "react";
 const TodoForm = ({ todos, setTodos }) => {
   const [task, setTask] = useState("");
 
-  const handleChange = (event) => {
-    setTask(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
+  const addTask = () => {
     if (task.trim() === "") return;
-
-    const newTodo = {
-      id: Date.now(),
-      text: task
-    };
-
-    setTodos([...todos, newTodo]);
-
-    setTask(""); 
+    setTodos([...todos, task]);
+    setTask("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Nieuwe taak:
-        <input 
-          type="text"
-          value={task}
-          onChange={handleChange}
-          placeholder="Typ een taak..."
-        />
-      </label>
+    <div className="flex">
+      <input
+        type="text"
+        placeholder="What to do?"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        className="w-80 p-2 rounded-l-md outline-none"
+      />
 
-      <button type="submit">Toevoegen</button>
-    </form>
+      <button
+        onClick={addTask}
+        className="bg-blue-400 hover:bg-blue-500 text-white px-4 rounded-r-md text-xl"
+      >
+        +
+      </button>
+    </div>
   );
 };
 

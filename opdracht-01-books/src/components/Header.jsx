@@ -1,15 +1,14 @@
-function Header() {
+const Header = () => {
   return (
-    <header className="header">
-      <nav className="navbar">
-        <ul>
-          <li>Home</li>
-          <li>Contact</li>
-          <li>About Us</li>
-        </ul>
-      </nav>
-    </header>
+<nav className ="Header">
+<ul>
+  <li>Home</li>
+  <li>About</li>
+  <li>Contact</li>
+</ul>
+</nav>
   );
-}
-
+};
+ 
 export default Header;
+ 
