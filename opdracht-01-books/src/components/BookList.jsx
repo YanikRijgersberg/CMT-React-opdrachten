@@ -2,22 +2,46 @@ import { useState } from "react";
 import BookData from "../book-data";
 import Book from "./Book";
 import BookCounter from "./BookCounter";
+
 const BookList = () => {
   const [books, setBooks] = useState(BookData);
   const [searchInput, setSearchInput] = useState("");
 
   const SearchHandler = (e) => {
-    let newSearch = e.target.value;
+    const newSearch = e.target.value;
     setSearchInput(newSearch);
-     const filteredBooks = BookData.filter((book) => 
-    
-book.title.toLowerCase().includes(newSearch.toLowerCase())
-  )
-setBooks(filteredBooks)
+
+    const filteredBooks = BookData.filter((book) =>
+      book.title.toLowerCase().includes(newSearch.toLowerCase())
+    );
+
+    setBooks(filteredBooks);
   };
 
- 
+  const categories = [
+    "Alle",
+    "Fantasy",
+    "Avontuur",
+    "Sciencefiction",
+    "Thriller",
+    "Romance"
+  ];
 
+  const [selectedCategory, setSelectedCategory] = useState("Alle");
+
+  function filterHandler(e) {
+    const category = e.target.value;
+    setSelectedCategory(category);
+
+    if (category === "Alle") {
+      setBooks(BookData);
+    } else {
+      const filtered = BookData.filter(
+        (book) => book.category === category
+      );
+      setBooks(filtered);
+    }
+  }
 
   return (
     <>
@@ -30,13 +54,32 @@ setBooks(filteredBooks)
           value={searchInput}
         />
       </div>
+
+      <div className="filter">
+        <label htmlFor="category">Filter op categorie: </label>
+
+        <select
+          id="category"
+          value={selectedCategory}
+          onChange={filterHandler}
+        >
+          {categories.map((cat, index) => (
+            <option key={index} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <section className="booklist">
         <BookCounter aantal={books.length} />
         {books.map((book) => (
           <Book
-            img={book.image}
+            key={book.id}
+            image={book.image}
             title={book.title}
             author={book.author}
+            category={book.category}
             button={book.aantalKeerGelezen}
             btn={book.Btn}
           />
