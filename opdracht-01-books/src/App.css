@@ -1,3 +1,8 @@
+img{
+width: 300px;
+height: auto;
+}
+
 .container{
     display: flex;
     background-color: rgb(120, 236, 231);
