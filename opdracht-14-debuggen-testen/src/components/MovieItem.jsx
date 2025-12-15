@@ -1,8 +1,8 @@
 const MovieItem = ({ movie, onDelete }) => {
   return (
-    <li>
-      {movie}
-      <button onClick={() => onDelete(movie)}>Remove</button>
+    <li key={movie.id}>
+      {movie.title}
+      <button onClick={() => onDelete(movie.id)}>Remove</button>
     </li>
   );
 };

@@ -2,22 +2,27 @@ import Header from './components/Header';
 import AddMovie from './components/AddMovie';
 import MovieList from './components/MovieList';
 
+import { useState } from 'react';
 import './App.css';
 
 function App() {
   const [movies, setMovies] = useState([]);
 
-  const addMovie = (newMovie) => {
-    if (!movies.includes(newMovie)) {
-      alert('This movie is already in your favorites!');
-      return;
-    }
-    setMovie([...movies, newMovie]);
-  };
+ const addMovie = (newMovie) => {
+  const exists = movies.some(movie => movie.title === newMovie.title);
 
-  const deleteMovie = (movieToDelete) => {
-    setMovies(movies.filter((movie) => movie !== movieToDelete));
-  };
+  if (exists) {
+    alert('This movie is already in your favorites!');
+    return;
+  }
+
+  setMovies([...movies, newMovie]);
+};
+
+const deleteMovie = (id) => {
+  setMovies(movies.filter(movie => movie.id !== id));
+};
+
 
   return (
     <section className='container'>
