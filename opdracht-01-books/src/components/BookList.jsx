@@ -24,7 +24,7 @@ const BookList = () => {
     "Avontuur",
     "Sciencefiction",
     "Thriller",
-    "Romance"
+    "Romance",
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("Alle");
@@ -36,9 +36,7 @@ const BookList = () => {
     if (category === "Alle") {
       setBooks(BookData);
     } else {
-      const filtered = BookData.filter(
-        (book) => book.category === category
-      );
+      const filtered = BookData.filter((book) => book.category === category);
       setBooks(filtered);
     }
   }
@@ -58,11 +56,7 @@ const BookList = () => {
       <div className="filter">
         <label htmlFor="category">Filter op categorie: </label>
 
-        <select
-          id="category"
-          value={selectedCategory}
-          onChange={filterHandler}
-        >
+        <select id="category" value={selectedCategory} onChange={filterHandler}>
           {categories.map((cat, index) => (
             <option key={index} value={cat}>
               {cat}
@@ -82,6 +76,9 @@ const BookList = () => {
             category={book.category}
             button={book.aantalKeerGelezen}
             btn={book.Btn}
+            description={book.description}
+            year={book.year}
+            pages={book.pages}
           />
         ))}
       </section>
