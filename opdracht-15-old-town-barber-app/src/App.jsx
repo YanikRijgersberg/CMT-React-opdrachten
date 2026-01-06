@@ -1,10 +1,10 @@
-import './App.css';
-
+import "./App.css";
+import UserProfile from "./components/UserProfile";
 function App() {
-
   return (
     <>
-      <h1>Opdracht 13 - Flashcard Quiz</h1>
+      <h1>Old Town Barber</h1>
+      <UserProfile />
     </>
   );
 }
