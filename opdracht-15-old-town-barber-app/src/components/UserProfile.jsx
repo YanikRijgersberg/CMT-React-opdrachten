@@ -52,15 +52,31 @@ const UserProfile = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
       <h2>Profiel instellen</h2>
+      <form className="user-profile-form " onSubmit={handleSubmit}>
+        <input
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Name "
+        />
+        <input
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Email"
+        />
+        <input
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="Phone"
+        />
 
-      <input name="name" value={formData.name} onChange={handleChange} />
-      <input name="email" value={formData.email} onChange={handleChange} />
-      <input name="phone" value={formData.phone} onChange={handleChange} />
-
-      <button type="submit">Opslaan</button>
-    </form>
+        <button type="submit">Opslaan</button>
+      </form>
+    </>
   );
 };
 

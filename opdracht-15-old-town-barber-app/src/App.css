@@ -1,0 +1,27 @@
+html{
+background-color: rgb(52, 50, 50);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+text
+input {
+  background-color: rgb(249, 249, 249);  
+  border: 3px solid  rgb(182, 176, 15);
+  border-radius: 25px;
+}
+.App {
+display: flex;
+}
+.user-profile-form {
+  width: 30px;
+}
+.home-title {
+  color: rgb(182, 176, 15);
+}
+div{
+  margin: 10px;
+  margin-right: 20%;
+}
+.shop-info {
+  background-color: rgb(176, 87, 87);
+}

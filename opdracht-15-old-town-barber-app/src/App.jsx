@@ -5,10 +5,14 @@ import ShopInfo from "./components/ShopInfo";
 function App() {
   return (
     <>
-      <h1>Old Town Barber</h1>
-
-      <UserProfile />
-      <ShopInfo />
+      <section className="App">
+        <div>
+          <h1 className="home-title">Old Town Barber</h1>
+          
+          <UserProfile className="user-profile" />
+        </div>
+        <ShopInfo className="shop-info" />
+      </section>
     </>
   );
 }
