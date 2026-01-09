@@ -1,3 +1,4 @@
+//info
 export const data = {
   name: "Old Town Barber",
   openingHours: {
@@ -11,6 +12,7 @@ export const data = {
   },
 };
 
+// Service
 export const services = [
   {
     id: 1,
@@ -36,4 +38,17 @@ export const services = [
     price: 18,
     duration: 25,
   },
+];
+
+//afspraken
+export const timeSlots = [
+  "09:00",
+  "10:00",
+  "11:00",
+  "12:00",
+  "13:00",
+  "14:00",
+  "15:00",
+  "16:00",
+  "17:00",
 ];
